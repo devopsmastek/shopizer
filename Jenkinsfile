@@ -1,11 +1,10 @@
 pipeline {
-    agent any
+    agent { docker 'maven:3-alpine' } 
     stages {
-        stage ('Checkout'){
+        stage('Example Build') {
             steps {
-            checkout scm
-			
+                sh 'mvn -B clean verify'
             }
-   	    }
         }
     }
+}
