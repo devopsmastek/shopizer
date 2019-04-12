@@ -1,11 +1,5 @@
 pipeline {
-
     agent any
- 	parameters {
-        string(defaultValue: "sachin.a.patil@oracle.com", description: 'What environment?', name: 'EmailRecipient')
-        // choices are newline separated
-        choice(choices: 'US-EAST-1\nUS-WEST-2', description: 'What AWS region?', name: 'region')
-    }
     tools {
         maven 'jenkins_maven'
         jdk 'JAVA_1.8'
