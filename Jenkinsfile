@@ -58,7 +58,6 @@ pipeline {
         }
 
         always {
-            currentBuild.result = 'success'
 	    step([$class: 'Mailer',
                 notifyEveryUnstableBuild: true,
                 recipients: "${params.EmailRecipient}",
