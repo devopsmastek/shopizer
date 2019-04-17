@@ -20,19 +20,19 @@ pipeline {
             steps {
 	       sh "echo ${params.EmailRecipient}"
 	       sh "echo ${params.region}"    
-               sh 'mvn clean package sonar:sonar -Dsonar.host.url=http://127.0.0.1:9000/ -DproxySet=true'
+               sh 'mvn clean package sonar:sonar -Dsonar.host.url=http://127.0.0.1:9000/ '
 		   	nexusArtifactUploader(
     			nexusVersion: 'nexus3',
     			protocol: 'http',
     			nexusUrl: '127.0.0.1:9999',
-    			groupId: 'com.mkyong',
-    			version: '1.0-SNAPSHOT',
-    			repository: 'maven-snapshots',
-    			credentialsId: 'Mum_Nexus_server',
+                        groupId: 'com.shopizer',
+                        version: '1.0-SNAPSHOT',
+                        repository: 'maven-snapshots',
+                        credentialsId: 'Nexus_server',
     			artifacts: [
-        		[artifactId: 'CounterWebApp',
+                        [artifactId: 'shopizer',
          		classifier: '',
-         		file: 'target/CounterWebApp.war',
+                        file: 'sm-shop/sm-shop.war',
          		type: 'war']
     			]
  		)
