@@ -32,7 +32,7 @@ pipeline {
     			artifacts: [
                         [artifactId: 'shopizer',
          		classifier: '',
-                        file: 'sm-shop/sm-shop.war',
+                        file: 'sm-shop/target/sm-shop.war',
          		type: 'war']
     			]
  		)
