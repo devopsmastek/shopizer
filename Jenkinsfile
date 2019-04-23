@@ -24,9 +24,9 @@ pipeline {
 		   	nexusArtifactUploader(
     			nexusVersion: 'nexus3',
     			protocol: 'http',
-    			nexusUrl: '127.0.0.1:9999',
+			nexusUrl: '127.0.0.1:9999/nexus',
                         groupId: 'com.shopizer',
-						version: '1.0-SNAPSHOT',
+                        version: '1.0-SNAPSHOT',
                         repository: 'maven-snapshots',
                         credentialsId: 'Nexus_server',
     			artifacts: [
