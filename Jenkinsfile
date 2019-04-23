@@ -27,7 +27,7 @@ pipeline {
 			nexusUrl: '127.0.0.1:9999/nexus',
                         groupId: 'com.shopizer',
                         version: '1.0-SNAPSHOT',
-                        repository: 'maven-snapshots',
+                        repository: 'snapshots',
                         credentialsId: 'Nexus_server',
     			artifacts: [
                         [artifactId: 'shopizer',
