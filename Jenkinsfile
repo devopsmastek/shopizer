@@ -22,12 +22,12 @@ pipeline {
 	       sh "echo ${params.region}"    
                sh 'mvn clean package sonar:sonar -Dsonar.host.url=http://127.0.0.1:9000/ '
 		   	nexusArtifactUploader(
-    			nexusVersion: 'nexus3',
+    			nexusVersion: 'nexus22',
     			protocol: 'http',
 			nexusUrl: '127.0.0.1:9999/nexus',
                         groupId: 'com.shopizer',
                         version: '1.0-SNAPSHOT',
-                        repository: 'snapshots',
+                        repository: 'maven-snapshots',
                         credentialsId: 'Nexus_server',
     			artifacts: [
                         [artifactId: 'shopizer',
