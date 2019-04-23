@@ -30,7 +30,7 @@ pipeline {
                         repository: 'maven-snapshots',
                         credentialsId: 'Nexus_server',
     			artifacts: [
-                        [artifactId: 'shopizer',
+                        [artifactId: '',
          		classifier: '',
                         file: 'sm-shop/target/sm-shop.war',
          		type: 'war']
